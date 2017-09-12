@@ -7,18 +7,20 @@ $(document).ready(function () {
     $.each(employees.results, function(i, person) {
       //create variables for all data
       let photo = person.picture.medium;
-      let firstName = '<b>' + person.name.first + '</b>';
-      let lastName = '<b>' + person.name.last + '</b>';
-      let name = [firstName, lastName];
-      let fullName = '<span>' + firstName + " " + lastName + '</span>'//done capitalizing
+      let firstName = '<b class="capitalize">' + person.name.first + '</b>';
+      let lastName = '<b class="capitalize">' + person.name.last + '</b>';
+      let fullName = '<span>' + firstName + " " + lastName + '</span>';//done capitalizing
       let email = person.email;
       let phone = person.cell;
-      let street = person.location.street;
-      let city = person.location.city;
-      let state = '<b>' + person.location.state + '</b>';
+      let street = '<span class="capitalize">' + person.location.street + '</span>';
+      let city = '<span class="capitalize">' + person.location.city + '</span>';
+      let state = '<span class="capitalize">' + person.location.state + '</span>';
       let zip = person.location.postcode;
       let address = '<span>' + street + ", " + city + ", " + state + " " + zip + '</span>';
       let bday = person.dob;
+      let formatDOB = new Date(Date.parse(bday));
+      let dob = formatDOB.toLocaleDateString('en-US');
+
 
     //employee div
       empHTML += '<section class="emp-card">';
@@ -26,7 +28,7 @@ $(document).ready(function () {
       empHTML += '<ul class="emp-info">';
       empHTML += '<li>' + fullName + '</li>';
       empHTML += '<li>' + email + '</li>';
-      empHTML += '<li class="capitalize">' + city + '</li></ul></section>';
+      empHTML += '<li>' + city + '</li></ul></section>';
 
     //modal div
       modHTML += '<div class="mod-card">';
@@ -39,11 +41,11 @@ $(document).ready(function () {
       modHTML += '<img class="mod-photo" alt="employee picture" src=' + photo + '>';
       modHTML += '<li>' + fullName + '</li>';
       modHTML += '<li>' + email + '</li>';
-      modHTML += '<li class="capitalize">' + city + '</li></div>';
+      modHTML += '<li>' + city + '</li></div>';
       modHTML += '<div class=".modDetails">';
       modHTML += '<li>' + phone + '</li>';
       modHTML += '<li>' + address + '</li>';
-      modHTML += '<li>' + 'Birthday: ' + bday + '</li></div></div></div>';
+      modHTML += '<li>' + 'Birthday: ' + dob + '</li></div></div></div>';
 
     }); //end html each loop
       empHTML += '</div>';
@@ -66,20 +68,19 @@ $(document).ready(function () {
         if(index > 0) {
           $(modCard[index]).css("left", "100%");
           $(modCard[index - 1]).css("left", "28%");
-          $(modCard[index]).css("transition", "left .5s ease-in");
-
+          $(modCard[index]).css("transition", "none");
         }
-      })
+      });//end previous click
 
       $('.next').click(function() {
         let modCard = document.getElementsByClassName('mod-card');
         let index = $(this.parentElement.parentElement.parentElement).index();
         if(index < 11) {
-        $(modCard[index]).css("left", "100%");
-        $(modCard[index + 1]).css("left", "28%");
-        $(modCard[index]).css("transition", "left .5s ease-in");
-      }
-      })
+          $(modCard[index]).css("left", "100%");
+          $(modCard[index + 1]).css("left", "28%");
+          $(modCard[index]).css("transition", "none");
+        }
+      });//end next click
 
       $('span').click(function() {
         if(this.className === 'close') {
