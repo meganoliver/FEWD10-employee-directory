@@ -21,6 +21,10 @@ body {
   align-items: center;
   background-color: #F8F8FF;
   z-index: 300; }
+  .emp-card:hover {
+    z-index: 310;
+    transform: scale(1.1);
+    transition: transform .3s ease-out; }
 
 .emp-photo {
   border-radius: 50%;
@@ -77,6 +81,36 @@ b {
     text-align: center;
     padding: 5px 0; }
 
+.navigate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: grey; }
+
+.previous,
+.next {
+  display: inline-block;
+  vertical-align: center; }
+  .previous:hover,
+  .next:hover {
+    transform: scale(1.4);
+    transition: transform .3s ease-out; }
+
+.previous {
+  margin-left: 10px; }
+
+.next {
+  margin-right: 10px; }
+
+.close {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer; }
+  .close:hover {
+    transform: scale(1.4);
+    transition: transform .3s ease-out; }
+
 .flex-div {
   display: flex;
   flex-direction: column;
@@ -91,12 +125,6 @@ b {
   text-align: center;
   padding: 15px 0;
   margin-bottom: 15px; }
-
-.close {
-  padding: 5px;
-  margin: 5px 0 5px 5px;
-  float: right;
-  cursor: pointer; }
 
 .mod-photo {
   border-radius: 50%;
