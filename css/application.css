@@ -1,6 +1,9 @@
 body {
   background-color: #F5F5F5; }
 
+#employees {
+  z-index: 0; }
+
 #emp-container {
   display: flex;
   flex-wrap: wrap;
@@ -16,7 +19,8 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #F8F8FF; }
+  background-color: #F8F8FF;
+  z-index: 300; }
 
 .emp-photo {
   border-radius: 50%;
@@ -60,15 +64,14 @@ b {
 
 .mod-card {
   position: absolute;
-  top: 10%;
-  left: 30%;
+  top: 20%;
+  left: 100%;
   background-color: #fff;
   border-radius: 5px;
   width: 40%;
   z-index: 1000;
   border: 1px solid grey;
-  height: 415px;
-  visibility: hidden; }
+  height: 415px; }
   .mod-card li {
     list-style: none;
     text-align: center;
@@ -89,10 +92,14 @@ b {
   padding: 15px 0;
   margin-bottom: 15px; }
 
-#close {
+.close {
   padding: 5px;
   margin: 5px;
-  float: right; }
+  float: right;
+  cursor: pointer; }
+  .close:hover {
+    font-size: 1.5em;
+    transition: font-size, 1000, ease-in; }
 
 .mod-photo {
   border-radius: 50%;

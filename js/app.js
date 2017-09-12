@@ -21,16 +21,16 @@ $(document).ready(function () {
       let bday = person.dob;
 
     //employee div
-      empHTML += '<div class="emp-card">';
+      empHTML += '<section class="emp-card">';
       empHTML += '<img class="emp-photo" alt="employee picture" src=' + photo + '>';
       empHTML += '<ul class="emp-info">';
       empHTML += '<li>' + fullName + '</li>';
       empHTML += '<li>' + email + '</li>';
-      empHTML += '<li class="capitalize">' + city + '</li></ul></div>';
+      empHTML += '<li class="capitalize">' + city + '</li></ul></section>';
 
     //modal div
       modHTML += '<div class="mod-card">';
-      modHTML += '<span id="close">X</span>';
+      modHTML += '<span class="close">X</span>';
       modHTML += '<div class="flex-div">'
       modHTML += '<div class="mod-info">';
       modHTML += '<img class="emp-photo" alt="employee picture" src=' + photo + '>';
@@ -46,16 +46,27 @@ $(document).ready(function () {
       modHTML += '</div>';
       $('#employees').html(empHTML);
       $('#modal').html(modHTML);
+
+      $('section').click(function() {
+        $('#overlay').css("visibility", "visible");
+        let empCard = document.getElementsByClassName('emp-card');
+        let modCard = document.getElementsByClassName('mod-card');
+        let index = $(this).index();
+        $(modCard[index]).css("left", "28%");
+        $(modCard[index]).css("transition", "left, 8000, ease-in");
+      });//end click function
+
+      $('span').click(function() {
+        if(this.className === 'close') {
+          console.log('hi');
+          $('.mod-card').css("left", "100%");
+          $('#overlay').css("visibility", "hidden");
+        }
+      });//end close click
+
   } //end displayInfo function
   $.getJSON(url, displayInfo);
 
-  let empCard = document.getElementsByClassName('emp-card');
-  let modCard = document.getElementsByClassName('mod-card');
-  console.log(empCard);
-  console.log(modCard);
 
-  $('empCard').each(function(index) {
-    console.log(this);
-  });
 
 }); //end ready
