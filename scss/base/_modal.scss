@@ -1,0 +1,75 @@
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: .8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  visibility: hidden;
+}
+
+#modal {
+  // visibility: hidden;
+}
+
+
+
+.mod-card {
+
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 40%;
+  z-index: 1000;
+  border: 1px solid grey;
+  height: 415px;
+  visibility: hidden;
+  
+  li {
+    list-style: none;
+    text-align: center;
+    padding: 5px 0;
+  }
+}
+
+.flex-div{
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+.mod-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  width: 90%;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 15px;
+}
+
+#close {
+  padding: 5px;
+  margin: 5px;
+  float: right;
+}
+
+.mod-photo {
+  border-radius: 50%;
+  width: 30%;
+}
+
+.modDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+  margin: 15px 0;
+}

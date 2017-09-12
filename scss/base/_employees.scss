@@ -1,0 +1,60 @@
+#emp-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.emp-card {
+  width: 24%;
+  min-width: 300px;
+  line-height: 1.5rem;
+  margin: 10px 10px 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F8F8FF;
+
+  &:hover {
+
+  }
+}
+
+.emp-photo {
+  border-radius: 50%;
+  padding-left: 8px;
+  width: 30%;
+  margin: 14px 0;
+}
+
+.emp-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: .8rem;
+  padding-right: 8px;
+  padding-left: 20px;
+  width: 50%;
+
+
+  li {
+    list-style: none;
+  }
+}
+
+.emp-name {
+    font-weight: bold;
+    font-size: 1rem;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+}
+
+.capitalize::first-letter,
+b {
+  text-transform: capitalize;
+}
