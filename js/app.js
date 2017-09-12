@@ -30,10 +30,11 @@ $(document).ready(function () {
 
     //modal div
       modHTML += '<div class="mod-card">';
-      modHTML += '<span class="close">X</span>';
       modHTML += '<div class="flex-div">'
       modHTML += '<div class="mod-info">';
-      modHTML += '<img class="emp-photo" alt="employee picture" src=' + photo + '>';
+      modHTML += '<div class ="close-wrapper">';
+      modHTML += '<img class="mod-photo" alt="employee picture" src=' + photo + '>';
+      modHTML += '<span class="close">' + 'X' + '</span></div>';
       modHTML += '<li>' + fullName + '</li>';
       modHTML += '<li>' + email + '</li>';
       modHTML += '<li class="capitalize">' + city + '</li></div>';
@@ -49,11 +50,12 @@ $(document).ready(function () {
 
       $('section').click(function() {
         $('#overlay').css("visibility", "visible");
+
         let empCard = document.getElementsByClassName('emp-card');
         let modCard = document.getElementsByClassName('mod-card');
         let index = $(this).index();
         $(modCard[index]).css("left", "28%");
-        $(modCard[index]).css("transition", "left, 8000, ease-in");
+        $(modCard[index]).css("transition", "left .5s ease-in");
       });//end click function
 
       $('span').click(function() {

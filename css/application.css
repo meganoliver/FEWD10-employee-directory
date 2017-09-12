@@ -59,7 +59,7 @@ b {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 500;
+  z-index: 800;
   visibility: hidden; }
 
 .mod-card {
@@ -94,16 +94,19 @@ b {
 
 .close {
   padding: 5px;
-  margin: 5px;
+  margin: 5px 0 5px 5px;
   float: right;
   cursor: pointer; }
-  .close:hover {
-    font-size: 1.5em;
-    transition: font-size, 1000, ease-in; }
 
 .mod-photo {
   border-radius: 50%;
-  width: 30%; }
+  width: 30%;
+  align-self: center;
+  padding-left: 33px; }
+
+.close-wrapper {
+  display: inline-block;
+  width: 100%; }
 
 .modDetails {
   display: flex;
