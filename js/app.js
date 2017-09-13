@@ -115,10 +115,8 @@ $(document).ready(function () {
             let modCard = document.getElementsByClassName('mod-card');
             let index = $(this).index();
             $(modCard[i]).css("left", "28%");
-            $(modCard[i]).css("transition", "left .5s ease-in");
           } //end if statement
-        });
-
+        }); //end loop
       }); //end keyup
 
   } //end displayInfo function
