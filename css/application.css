@@ -12,7 +12,7 @@ header {
 h2 {
   display: inline;
   float: left;
-  margin-left: 147px; }
+  margin-left: 107px; }
 
 #select {
   width: 200px;
@@ -21,11 +21,12 @@ h2 {
   border-radius: 7px;
   display: inline;
   float: right;
-  margin: 20px 0;
-  z-index: 5000; }
+  margin: 20px 0; }
+
+a {
+  color: black; }
 
 #employees {
-  z-index: 0;
   clear: both; }
 
 #emp-container {
@@ -37,16 +38,16 @@ h2 {
   width: 24%;
   min-width: 300px;
   line-height: 1.5rem;
+  text-align: center;
   margin: 10px 10px 0;
   border: 1px solid grey;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #F8F8FF;
-  z-index: 300; }
+  background-color: #F8F8FF; }
   .emp-card:hover {
-    z-index: 310;
+    z-index: 1;
     transform: scale(1.1);
     transition: transform .3s ease-out; }
 
@@ -72,7 +73,8 @@ h2 {
 .capitalize {
   text-transform: capitalize; }
 
-.name {
+.empName,
+.modName {
   font-weight: bold; }
 
 #overlay {
@@ -83,30 +85,31 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 800;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 5; }
 
 #mod-container {
   top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: absolute; }
+  position: absolute;
+  z-index: -5; }
 
 .mod-card {
   position: absolute;
+  text-align: center;
   top: 10%;
-  left: 100%;
+  left: 150%;
   background-color: #fff;
   border-radius: 5px;
   width: 40%;
   border: 1px solid grey;
   height: 415px;
   z-index: 1000;
-  box-shadow: 5px 10px 2px 5px grey; }
+  box-shadow: 14px 18px 63px 0 #000; }
   .mod-card li {
     list-style: none;
-    text-align: center;
     padding: 5px 0; }
 
 .navigate {
@@ -157,12 +160,7 @@ h2 {
 .mod-photo {
   border-radius: 50%;
   width: 30%;
-  align-self: center;
-  padding-left: 33px; }
-
-.close-wrapper {
-  display: inline-block;
-  width: 100%; }
+  margin-bottom: 8px; }
 
 .modDetails {
   display: flex;
