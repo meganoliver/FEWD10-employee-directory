@@ -85,9 +85,11 @@ $(document).ready(function () {
         let modCard = document.getElementsByClassName('mod-card');
         let index = $(this.parentElement.parentElement.parentElement).index();
         if(index < modCard.length - 1) {
+          $(modCard[index]).css("right", "150%");
           $(modCard[index]).css("left", "150%");
+          $(modCard[index]).css("transition", "left 0s");
           $(modCard[index + 1]).css("left", "28%");
-          $(modCard[index]).css("transition", "none");
+          $(modCard[index + 1]).css("transition", "none");
         }
       });//end next click
 
